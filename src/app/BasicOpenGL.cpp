@@ -75,7 +75,7 @@ int main(int argc, char **argv) {
 	glClearColor(0.0f, 0.0f, 0.7f, 1.0f);	
 
 	// Create and load shaders
-	GLuint programID = 0;
+	GLuint programID = 0; 
 	try {		
 		// Load vertex shader code and fragment shader code
 		string vertexCode = readFileToString("./shaders/BasicOpenGL/Basic.vs");
