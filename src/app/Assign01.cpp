@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
 	if(DEBUG_MODE) checkAndSetupOpenGLDebugging();
 
 	// Set the background color to a shade of blue
-	glClearColor(0.0f, 0.0f, 0.8f, 1.0f);	
+	glClearColor(0.5f, 0.2f, 0.3f, 1.0f);	
 
 	// Create and load shader
 	GLuint programID = 0;
