@@ -42,6 +42,14 @@ int main(int argc, char **argv) {
 
     glClearColor(0.9f, 0.2f, 0.7f, 1.0f);
     
+    glewExperimental = true;
+    GLenum err = glewInit();
+    if (GLEW_OK != err) {
+        cout << "GLEW ERROR: ";
+        cout << glewGetErrorString(err) << endl;
+        glfwTerminate();
+        exit(1);
+    }
 
     while(!glfwWindowShouldClose(window)) {
         glfwGetFramebufferSize(window, &fwidth, &fheight);
