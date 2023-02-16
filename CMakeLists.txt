@@ -74,3 +74,9 @@ add_executable(Exercises03 ${GENERAL_SOURCES} "./src/app/Exercises03.cpp")
 target_link_libraries(Exercises03 ${ALL_LIBRARIES})
 install(TARGETS Exercises03 RUNTIME DESTINATION bin/Exercises03)
 install(DIRECTORY shaders/Exercises03 DESTINATION bin/Exercises03/shaders)
+
+# ExercisesMath
+add_executable(ExercisesMath ${GENERAL_SOURCES} "./src/app/ExercisesMath.cpp")
+target_link_libraries(ExercisesMath ${ALL_LIBRARIES})
+install(TARGETS ExercisesMath RUNTIME DESTINATION bin/ExercisesMath)
+install(DIRECTORY shaders/ExercisesMath DESTINATION bin/ExercisesMath/shaders)
