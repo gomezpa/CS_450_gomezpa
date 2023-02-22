@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 	checkOpenGLVersion();
 
 	// Set up debugging (if requested)
-	if(DEBUG_MODE) checkAndSetupOpenGLDebugging();
+	if(DEBUG_MODE) checkAndSetupOpenGLDebugging(); 
 
 	// Set the background color to a shade of blue
 	glClearColor(0.5f, 0.2f, 0.3f, 1.0f);	
