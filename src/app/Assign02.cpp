@@ -76,30 +76,33 @@ void createSimplePentagon(Mesh &m) {
 	// Note: glm::vec4(red, green, blue, alpha)
 	upperLeft.color = glm::vec4(0.0, 1.0, 0.0, 1.0);
 	upperRight.color = glm::vec4(1.0, 0.0, 0.0, 1.0);
-	centerLeft.color = glm::vec4(1.0, 0.5, 0.7, 1.0);
+	centerLeft.color = glm::vec4(0.2, 0.5, 0.8, 0.5);
 	lowerLeft.color = glm::vec4(0.0, 0.0, 1.0, 1.0);
 	lowerRight.color = glm::vec4(1.0, 1.0, 1.0, 1.0);
 	
 	// Add to mesh's list of vertices
-	m.vertices.push_back(upperLeft);
 	m.vertices.push_back(upperRight);
+	m.vertices.push_back(upperLeft);
 	m.vertices.push_back(centerLeft);
 	m.vertices.push_back(lowerLeft);
 	m.vertices.push_back(lowerRight);
 
 	// Add indices for three triangles
-	m.indices.push_back(0);
+
+	// Draw square shape
 	m.indices.push_back(1);
 	m.indices.push_back(3);
+	m.indices.push_back(4);
 
+	m.indices.push_back(1);
 	m.indices.push_back(0);
+	m.indices.push_back(4);
+
+	// Center-left triangle
+	m.indices.push_back(1);
 	m.indices.push_back(2);
 	m.indices.push_back(3);
-
-	m.indices.push_back(1);
-	m.indices.push_back(4);
-	m.indices.push_back(3);
-
+	
 }
 
 
