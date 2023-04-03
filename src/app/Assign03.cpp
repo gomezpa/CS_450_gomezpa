@@ -153,11 +153,6 @@ int main(int argc, char **argv) {
 	// Set the background color to a shade of blue
 	glClearColor(0.5f, 0.2f, 0.3f, 1.0f);	
 
-	// Check for sufficient arguments
-	if (argc <= 1) {
-		exit(EXIT_FAILURE);
-	}
-
 	// Create and load shader
 	GLuint programID = 0;
 	try {		
@@ -187,8 +182,13 @@ int main(int argc, char **argv) {
 	//createMeshGL(m, mgl);
 
 	Assimp::Importer importer;
+
+	string modelPath = "./sampleModels/sphere.obj";
+	if(argc >= 2) {
+		modelPath = argv[1];
+	}
 	
-	const aiScene *scene = importer.ReadFile(argv[1],
+	const aiScene *scene = importer.ReadFile(modelPath,
 											 aiProcess_Triangulate |
 											 aiProcess_FlipUVs |
 											 aiProcess_GenNormals |
