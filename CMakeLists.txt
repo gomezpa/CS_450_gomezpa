@@ -92,3 +92,20 @@ add_executable(ExercisesMath ${GENERAL_SOURCES} "./src/app/ExercisesMath.cpp")
 target_link_libraries(ExercisesMath ${ALL_LIBRARIES})
 install(TARGETS ExercisesMath RUNTIME DESTINATION bin/ExercisesMath)
 install(DIRECTORY shaders/ExercisesMath DESTINATION bin/ExercisesMath/shaders)
+# ProfExercises03
+add_executable(ProfExercises03 ${GENERAL_SOURCES} "./src/app/ProfExercises03.cpp")
+target_link_libraries(ProfExercises03 ${ALL_LIBRARIES})
+install(TARGETS ProfExercises03 RUNTIME DESTINATION bin/ProfExercises03)
+install(DIRECTORY shaders/ProfExercises03 DESTINATION bin/ProfExercises03/shaders)
+
+# ProfExercisesMath
+add_executable(ProfExercisesMath ${GENERAL_SOURCES} "./src/app/ProfExercisesMath.cpp")
+target_link_libraries(ProfExercisesMath ${ALL_LIBRARIES})
+install(TARGETS ProfExercisesMath RUNTIME DESTINATION bin/ProfExercisesMath)
+install(DIRECTORY shaders/ProfExercisesMath DESTINATION bin/ProfExercisesMath/shaders)
+
+# ProfExercises07
+add_executable(ProfExercises07 ${GENERAL_SOURCES} "./src/app/ProfExercises07.cpp")
+target_link_libraries(ProfExercises07 ${ALL_LIBRARIES})
+install(TARGETS ProfExercises07 RUNTIME DESTINATION bin/ProfExercises07)
+install(DIRECTORY shaders/ProfExercises07 DESTINATION bin/ProfExercises07/shaders)
