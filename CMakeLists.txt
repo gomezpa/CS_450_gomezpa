@@ -81,6 +81,12 @@ target_link_libraries(Assign03 ${ALL_LIBRARIES})
 install(TARGETS Assign03 RUNTIME DESTINATION bin/Assign03)
 install(DIRECTORY shaders/Assign03 DESTINATION bin/Assign03/shaders)
 
+# Assign04
+add_executable(Assign04 ${GENERAL_SOURCES} "./src/app/Assign04.cpp")
+target_link_libraries(Assign04 ${ALL_LIBRARIES})
+install(TARGETS Assign04 RUNTIME DESTINATION bin/Assign04)
+install(DIRECTORY shaders/Assign04 DESTINATION bin/Assign04/shaders)
+
 # Exercises03
 add_executable(Exercises03 ${GENERAL_SOURCES} "./src/app/Exercises03.cpp")
 target_link_libraries(Exercises03 ${ALL_LIBRARIES})
@@ -92,6 +98,7 @@ add_executable(ExercisesMath ${GENERAL_SOURCES} "./src/app/ExercisesMath.cpp")
 target_link_libraries(ExercisesMath ${ALL_LIBRARIES})
 install(TARGETS ExercisesMath RUNTIME DESTINATION bin/ExercisesMath)
 install(DIRECTORY shaders/ExercisesMath DESTINATION bin/ExercisesMath/shaders)
+
 # ProfExercises03
 add_executable(ProfExercises03 ${GENERAL_SOURCES} "./src/app/ProfExercises03.cpp")
 target_link_libraries(ProfExercises03 ${ALL_LIBRARIES})
