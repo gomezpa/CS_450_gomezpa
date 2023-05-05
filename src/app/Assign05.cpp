@@ -101,8 +101,8 @@ static void mouse_position_callback(GLFWwindow* window, double xpos, double ypos
 
 // GLFW key callback function
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods){
-	glm::vec3 camDir = glm::normalizecamDir;
-
+	glm::vec3 camDir = glm::normalize(lookAt - eye);
+	
 	if (action == GLFW_PRESS || action == GLFW_REPEAT){
 		switch(key){
 			case GLFW_KEY_ESCAPE:
