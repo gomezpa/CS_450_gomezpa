@@ -101,6 +101,8 @@ static void mouse_position_callback(GLFWwindow* window, double xpos, double ypos
 
 // GLFW key callback function
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods){
+	glm::vec3 camDir = glm::normalizecamDir;
+
 	if (action == GLFW_PRESS || action == GLFW_REPEAT){
 		switch(key){
 			case GLFW_KEY_ESCAPE:
@@ -113,19 +115,21 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 				rotAngle -= 1.0;
 				break;
 			case GLFW_KEY_W:
-				lookAt += (lookAt - eye) * glm::vec3(0.1, 0.1, 0.1);
-				eye += (lookAt - eye) * glm::vec3(0.1, 0.1, 0.1);
+				lookAt += camDir * glm::vec3(0.1, 0.1, 0.1);
+				eye += camDir * glm::vec3(0.1, 0.1, 0.1);
 				break; 
 			case GLFW_KEY_S:
-				lookAt -= (lookAt - eye) * glm::vec3(0.1, 0.1, 0.1);
-				eye -= (lookAt - eye) * glm::vec3(0.1, 0.1, 0.1);
+				lookAt -= camDir * glm::vec3(0.1, 0.1, 0.1);
+				eye -= camDir * glm::vec3(0.1, 0.1, 0.1);
 				break;
 			case GLFW_KEY_D:
-				lookAt += glm::cross((lookAt - eye), glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
-				eye += glm::cross((lookAt - eye), glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
+				lookAt += glm::cross(camDir, glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
+				eye += glm::cross(camDir, glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
+				break;
 			case GLFW_KEY_A:
-				lookAt -= glm::cross((lookAt - eye), glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
-				eye -= glm::cross((lookAt - eye), glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
+				lookAt -= glm::cross(camDir, glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
+				eye -= glm::cross(camDir, glm::vec3(0,1,0)) * glm::vec3(0.1, 0.1, 0.1);
+				break;
 			default:
 				break;
 		}
