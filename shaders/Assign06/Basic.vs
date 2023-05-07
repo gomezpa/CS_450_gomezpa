@@ -19,14 +19,14 @@ void main()
 	vec4 objPos = vec4(position, 1.0);
 
 	vec4 viewPos = viewMat * modelMat * objPos;
-	interPos = projMat * viewPos;
+	interPos = viewPos;
 
 	// For now, just pass along vertex position (no transformations)
 	interNormal = normMat * normal;
 
 	// Output per-vertex color
 	vertexColor = color;
-	gl_Position = interPos;
+	gl_Position = projMat * viewPos;
 
 }
 
