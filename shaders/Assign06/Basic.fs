@@ -11,7 +11,7 @@ uniform vec4 lightPos;
 void main()
 {	
 	vec3 N = normalize(interNormal);
-	vec3 L = normalize((interPos.xyz-lightPos.xyz));
+	vec3 L = normalize((lightPos.xyz-interPos.xyz));
 
 	float diffuseCo = max(0.0, dot(N,L));
 	vec3 diffColor = vec3 (diffuseCo) * vertexColor.rgb;
